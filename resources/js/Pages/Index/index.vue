@@ -1,18 +1,17 @@
-<template>Hello ! {{ counter }}</template>
+
+<template>
+    <div>Index</div>
+    <Link href="/hello">Show Page</Link>
+    <div>
+        The message is: {{ message }}
+    </div>
+</template>
 
 
-<script>
-import { ref, onMounted } from 'vue';
-
-export default {
-    setup() {
-        const counter = ref(0)
-
-        onMounted(() => {
-            setInterval(() => counter.value++, 1000)
-        })
-
-        return { counter }
-    }
-}
+<script setup>
+import {Link} from "@inertiajs/vue3";
+defineProps({
+    message: String
+});
 </script>
+
